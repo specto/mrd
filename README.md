@@ -1,4 +1,4 @@
-# robokingdom
+# Medieval Robo-Defence
 
 Tower defence game developed for educational purposes.
 
