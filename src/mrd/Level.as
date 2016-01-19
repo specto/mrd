@@ -9,9 +9,16 @@ package mrd {
  		private const posWidth = 308;
 
  		public function Level() {
-            for (var i = 0, j = 0; i <= 3; i++, j += posWidth){
-                positions.push(addChild(new mrd.Position(j, groundY)));
+            var i, j;
+            for (i = 0, j = 0; i <= 3; i++, j += posWidth){
+                positions.push(addChild(new Position(j, groundY-50)));
             }
+
+            for (i = 0; i < positions.length; i++){
+                positions[i].previousPosition = (positions[i-1]) ? positions[i-1] : null;
+                positions[i].nextPosition = (positions[i+1]) ? positions[i+1] : null;
+            }
+
     	    spawn('footbot', 0);
     	    spawn('wall', 2);
     	    spawn('wall', 3);

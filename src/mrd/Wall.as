@@ -1,4 +1,4 @@
-﻿package mrd {
+package mrd {
 	import flash.display.MovieClip;
 
 	public class Wall extends MovieClip {

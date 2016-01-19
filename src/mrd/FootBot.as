@@ -21,9 +21,6 @@ package mrd {
         public function walk(){
             animation.play();
             interval = setInterval(function(){
-//                 if(animation.hitTestObject()){
-//                     stopWalking();
-//                 }
                 animation.x += 25;
             }, 167);
         }
@@ -35,16 +32,15 @@ package mrd {
 
         public function explode(){
             explosion = this.addChild(new Explosion());
+            stopWalking();
             explosion.x = animation.x;
             explosion.y = animation.y;
-            removeChild(animation);
+            //removeChild(animation);
+            animation = null;
             setTimeout(function(){
-                removeChild(explosion);
+                //this.removeChild(explosion);
+                explosion = null;
             }, 500);
         }
-
-        /*public function changePosition(newPosition){
-            currentPosition = newPosition;
-        }*/
     }
 }
