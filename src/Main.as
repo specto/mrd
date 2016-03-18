@@ -8,9 +8,8 @@ package {
     	private const groundY = 500;
 
         public function Main():void {
-            //var theLevel = this.addChild(new Level());
 
-            spawn('wall', 550);
+            spawn('wall', 100);
             spawn('footbot', -100);
     		//spawn('wall', 0);
          }

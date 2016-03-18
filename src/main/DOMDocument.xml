@@ -1,9 +1,9 @@
 <DOMDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" width="1024" height="768" currentTimeline="1" xflVersion="2.5" creatorInfo="Adobe Flash Professional CC" platform="Windows" versionInfo="Saved by Adobe Flash Windows 14.1 build 96" majorVersion="14" minorVersion="1" buildNumber="96" vanishingPoint3DX="512" vanishingPoint3DY="384" nextSceneIdentifier="3" playOptionsPlayLoop="false" playOptionsPlayPages="false" playOptionsPlayFrameActions="false" filetypeGUID="DD0DDBBF-5BEF-45B2-9F24-A3048D2A676F">
      <symbols>
-          <Include href="bgr.xml" itemID="56928e52-0000000a" lastModified="1452445266"/>
+          <Include href="bgr.xml" itemID="56928e52-0000000a" lastModified="1458335030"/>
           <Include href="Explosion.xml" itemID="5681984b-00000014" lastModified="1451334020"/>
           <Include href="FootBot_walk.xml" itemID="5681426f-0000000a" lastModified="1458074738"/>
-          <Include href="Wall.xml" itemID="56e87396-0000000b" lastModified="1458074737"/>
+          <Include href="Wall_basic.xml" itemID="56ec6e3b-00000009" lastModified="1458335562"/>
      </symbols>
      <timelines>
           <DOMTimeline name="Scene 1">
@@ -23,25 +23,25 @@
      </persistentData>
      <PrinterSettings platform="macintosh"/>
      <publishHistory>
-          <PublishItem publishSize="14963" publishTime="1458075577"/>
-          <PublishItem publishSize="14968" publishTime="1458075532"/>
-          <PublishItem publishSize="14981" publishTime="1458075520"/>
-          <PublishItem publishSize="14958" publishTime="1458075483"/>
-          <PublishItem publishSize="14938" publishTime="1458075428"/>
-          <PublishItem publishSize="14938" publishTime="1458075419"/>
-          <PublishItem publishSize="14930" publishTime="1458075398"/>
-          <PublishItem publishSize="13051" publishTime="1458075358"/>
-          <PublishItem publishSize="14929" publishTime="1458075262"/>
-          <PublishItem publishSize="14918" publishTime="1458075108"/>
-          <PublishItem publishSize="14920" publishTime="1458075091"/>
-          <PublishItem publishSize="14889" publishTime="1458075073"/>
-          <PublishItem publishSize="14944" publishTime="1458074778"/>
-          <PublishItem publishSize="14952" publishTime="1458074707"/>
-          <PublishItem publishSize="13051" publishTime="1458074694"/>
-          <PublishItem publishSize="13107" publishTime="1458074604"/>
-          <PublishItem publishSize="13107" publishTime="1458074498"/>
-          <PublishItem publishSize="15060" publishTime="1458074406"/>
-          <PublishItem publishSize="15060" publishTime="1458074361"/>
-          <PublishItem publishSize="15055" publishTime="1458074328"/>
+          <PublishItem publishSize="14846" publishTime="1458336357"/>
+          <PublishItem publishSize="15477" publishTime="1458335878"/>
+          <PublishItem publishSize="15517" publishTime="1458335796"/>
+          <PublishItem publishSize="14842" publishTime="1458335616"/>
+          <PublishItem publishSize="14851" publishTime="1458335595"/>
+          <PublishItem publishSize="14854" publishTime="1458335587"/>
+          <PublishItem publishSize="14853" publishTime="1458335553"/>
+          <PublishItem publishSize="14846" publishTime="1458335538"/>
+          <PublishItem publishSize="13057" publishTime="1458335528"/>
+          <PublishItem publishSize="14787" publishTime="1458335479"/>
+          <PublishItem publishSize="14795" publishTime="1458335457"/>
+          <PublishItem publishSize="13057" publishTime="1458335446"/>
+          <PublishItem publishSize="13057" publishTime="1458335402"/>
+          <PublishItem publishSize="14850" publishTime="1458335392"/>
+          <PublishItem publishSize="14853" publishTime="1458335331"/>
+          <PublishItem publishSize="14846" publishTime="1458335299"/>
+          <PublishItem publishSize="14850" publishTime="1458335276"/>
+          <PublishItem publishSize="14855" publishTime="1458335194"/>
+          <PublishItem publishSize="14858" publishTime="1458335181"/>
+          <PublishItem publishSize="14792" publishTime="1458335131"/>
      </publishHistory>
 </DOMDocument>

@@ -2,7 +2,7 @@ package elements {
     import flash.display.MovieClip;
     import flash.utils.*;
     import flash.events.Event;
-    import custom_events.*;
+    //import custom_events.*;
 
     public class FootBot extends MovieClip {
         private var animation;
@@ -17,7 +17,7 @@ package elements {
             
             animation.stop();
             addEventListener("onShoot", takeDamage);
-            if (walking){ 
+            if (walking){
                 walk();
             }
         }
@@ -25,9 +25,14 @@ package elements {
         public function walk(){
             animation.play();
             interval = setInterval(function(){
+                this.x += 25;
                 animation.x += 25;
-                dispatchEvent(new onMove(this.x, this.y));
-                //trace("bot walked");
+                
+                var event = new Custom_event("onMove");
+                event.x = this.x;
+                event.y = this.y;
+                dispatchEvent(event);
+
             }, 167);
         }
 
@@ -49,7 +54,7 @@ package elements {
         private function beginDeath(){
             stopWalking();
             setTimeout(explode, 1000);
-            dispatchEvent(new onDie());
+            dispatchEvent(new Custom_event("onDie"));
             parent.removeChild(this);
         }
 
