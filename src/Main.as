@@ -20,6 +20,7 @@ package {
 	        switch (type.toLowerCase()) {
 	            case 'wall':
 	                obj = new Wall(x, groundY);
+	                addEventListener(Custom_event.ON_MOVE, obj.onMove);
 	                break;
 	            case 'footbot':
 	   			    obj = new FootBot(x, groundY);
