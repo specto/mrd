@@ -6,6 +6,7 @@ package elements {
 	public class Wall extends MovieClip {
 		private var animation;
 		private var range = 50;
+		public const id = Main.guid();
 
 		public function Wall(newX:Number, newY:Number) {
 			animation = addChild(new Wall_basic());
@@ -16,7 +17,7 @@ package elements {
 		}
 
 		public function onMove(ev:Custom_event) {
-			trace(ev.target + ' has moved');
+			trace(ev.target.id + ' has moved');
 		}
 
 		private function shoot(event){

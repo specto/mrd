@@ -9,6 +9,7 @@ package elements {
         private var interval;
         private var explosion;
         public var health = 100;
+        public const id = Main.guid();
 
         public function FootBot(x:Number, y:Number, walking:Boolean = true) {
             animation = this.addChild(new FootBot_walk());

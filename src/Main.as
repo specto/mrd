@@ -12,7 +12,6 @@ package {
             spawn('wall', 100);
             spawn('footbot', -100);
     		//spawn('wall', 0);
-    		trace(Main.guid());
          }
 
 	    public function spawn(type:String, x:Number, y:Number = groundY) {
