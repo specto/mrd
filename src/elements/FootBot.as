@@ -27,12 +27,7 @@ package elements {
             interval = setInterval(function(){
                 this.x += 25;
                 animation.x += 25;
-                
-                var event = new Custom_event("onMove");
-                event.x = this.x;
-                event.y = this.y;
-                dispatchEvent(event);
-
+                dispatchEvent(new Custom_event(Custom_event.ON_MOVE));
             }, 167);
         }
 
