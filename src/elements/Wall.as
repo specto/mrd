@@ -1,21 +1,22 @@
 package elements {
 	import flash.display.MovieClip;
-	import flash.events.Event;
-    //import elements;
+
+	//import elements;
 
 	public class Wall extends MovieClip {
 		private var animation;
 		private var range = 50;
 
-		public function Wall(x:Number, y:Number) {
-            animation = this.addChild(new Wall_basic());
-			this.x = x;
-            this.y = y;
-            animation.x = x;
-            animation.y = y;
-            animation.play();
+		public function Wall(newX:Number, newY:Number) {
+			animation = addChild(new Wall_basic());
+			x = newX;
+			y = newY;
+			animation.play();
+			trace(Custom_event.ON_MOVE);
+		}
 
-            this.addEventListener("onMove", shoot);
+		public function onMove(ev:Custom_event) {
+			trace(ev.target + ' has moved');
 		}
 
 		private function shoot(event){
