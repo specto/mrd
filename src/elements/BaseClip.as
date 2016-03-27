@@ -1,7 +1,7 @@
 package elements {
 	import flash.display.MovieClip;
 
-	public class General extends MovieClip{
+	public class BaseClip extends MovieClip{
 		public var id;
 
 		public function General(){

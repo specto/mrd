@@ -12,7 +12,14 @@ package {
             spawn('wall', 600);
             spawn('footbot', -100);
             spawn('footbot', 0);
-         }
+
+            addEventListener(CustomEvent.ON_DIE, handler_ON_DIE);
+        }
+
+        private function handler_ON_DIE(event){
+        	removeEventListener(CustomEvent.ON_SHOOT, event.target.handler_ON_SHOOT);
+        	removeChild(event.target);
+        }
 
 	    public function spawn(type:String, x:Number, y:Number = groundY) {
 	        var obj;

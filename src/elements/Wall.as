@@ -1,9 +1,9 @@
 package elements {
-	import elements.General;
+	import elements.BaseClip;
 
-	public class Wall extends General {
+	public class Wall extends BaseClip {
 		private var animation;
-		private var range = 150;
+		private var range = 300;
 
 		public function Wall(newX:Number, newY:Number) {
 			animation = addChild(new Wall_basic());

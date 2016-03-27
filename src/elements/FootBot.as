@@ -1,8 +1,8 @@
 package elements {
     import flash.utils.*;
-    import elements.General;
+    import elements.BaseClip;
 
-    public class FootBot extends General {
+    public class FootBot extends BaseClip {
         private var animation;
         private var interval;
         private var explosion;
@@ -30,27 +30,19 @@ package elements {
             }, 167);
         }
 
-        private function explode(){
-            explosion = addChild(new Explosion());
-            removeChild(animation);
-            setTimeout(function(){
-                removeChild(explosion);
-                //parent.removeChild(this);
-                //removing?
-            }, 500);
-        }
-
         public function beginDeath(){
             clearInterval(interval);
             animation.stop();
             //setTimeout(explode, 1000);
-            explode();
+            explosion = addChild(new Explosion());
+            removeChild(animation);
             dispatchEvent(new CustomEvent(CustomEvent.ON_DIE));
         }
 
         public function handler_ON_SHOOT(event){
-            if(event.x == this.x){
-                health -= 50;
+            if(event.x == x){
+                health -= 25;
+                //trace(health);
                 if(health <= 0){
                     beginDeath();
                 }
