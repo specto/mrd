@@ -1,37 +1,26 @@
 package elements {
-	import flash.display.MovieClip;
+	import elements.General;
 
-	//import elements;
-
-	public class Wall extends MovieClip {
+	public class Wall extends General {
 		private var animation;
-		private var range = 50;
-		public const id = Main.guid();
+		private var range = 150;
 
 		public function Wall(newX:Number, newY:Number) {
 			animation = addChild(new Wall_basic());
 			x = newX;
 			y = newY;
 			animation.play();
-			trace(Custom_event.ON_MOVE);
 		}
 
-		public function onMove(ev:Custom_event) {
-			trace(ev.target.id + ' has moved');
-		}
-
-		private function shoot(event){
-			trace("should be shooting");
-
-			if(event.x < this.x - 50){
-				var event_out = new Custom_event("onShoot");
+		public function handler_ON_MOVE(event:CustomEvent) {
+			if(event.x < x && event.x >= x - range){
+				var event_out = new CustomEvent(CustomEvent.ON_SHOOT);
 				event_out.x = event.x;
 				event_out.y = event.y;
 				dispatchEvent(event_out);
+			}else if(event.x == x){
+				event.target.beginDeath();
 			}
-			//}else if(event.x == this.x){
-			//	event.target.beginDeath();
-			//}
 		}
 	}
 }

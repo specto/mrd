@@ -1,62 +1,56 @@
 package elements {
-    import flash.display.MovieClip;
     import flash.utils.*;
-    import flash.events.Event;
-    //import custom_events.*;
+    import elements.General;
 
-    public class FootBot extends MovieClip {
+    public class FootBot extends General {
         private var animation;
         private var interval;
         private var explosion;
         public var health = 100;
-        public const id = Main.guid();
 
-        public function FootBot(x:Number, y:Number, walking:Boolean = true) {
-            animation = this.addChild(new FootBot_walk());
-            this.x = x;
-            this.y = y;
+        public function FootBot(newX:Number, newY:Number, walking:Boolean = true) {
+            animation = addChild(new FootBot_walk());
+            x = newX;
+            y = newY;
             
             animation.stop();
-            addEventListener("onShoot", takeDamage);
             if (walking){
                 walk();
             }
         }
 
-        public function walk(){
+        private function walk(){
             animation.play();
             interval = setInterval(function(){
-                this.x += 25;
-                animation.x += 25;
-                dispatchEvent(new Custom_event(Custom_event.ON_MOVE));
+                x += 25;
+                var event_out = new CustomEvent(CustomEvent.ON_MOVE);
+                event_out.x = x;
+                event_out.y = y;
+                dispatchEvent(event_out);
             }, 167);
         }
 
-        public function stopWalking(){
-            clearInterval(interval);
-            animation.stop();
-        }
-
-        public function explode(){
-            explosion = this.addChild(new Explosion());
-            explosion.x = animation.x;
-            explosion.y = animation.y;
-            animation = null;
+        private function explode(){
+            explosion = addChild(new Explosion());
+            removeChild(animation);
             setTimeout(function(){
-                explosion = null;
+                removeChild(explosion);
+                //parent.removeChild(this);
+                //removing?
             }, 500);
         }
 
-        private function beginDeath(){
-            stopWalking();
-            setTimeout(explode, 1000);
-            dispatchEvent(new Custom_event("onDie"));
-            parent.removeChild(this);
+        public function beginDeath(){
+            clearInterval(interval);
+            animation.stop();
+            //setTimeout(explode, 1000);
+            explode();
+            dispatchEvent(new CustomEvent(CustomEvent.ON_DIE));
         }
 
-        private function takeDamage(event){
+        public function handler_ON_SHOOT(event){
             if(event.x == this.x){
-                health -= 10;
+                health -= 50;
                 if(health <= 0){
                     beginDeath();
                 }
