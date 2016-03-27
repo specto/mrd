@@ -12,7 +12,7 @@ package elements {
             animation = addChild(new FootBot_walk());
             x = newX;
             y = newY;
-            
+
             animation.stop();
             if (walking){
                 walk();
@@ -47,6 +47,10 @@ package elements {
                     beginDeath();
                 }
             }
+        }
+
+        public function doDie(callback) {
+            setTimeout(callback, 500);
         }
     }
 }

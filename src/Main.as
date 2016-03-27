@@ -17,8 +17,10 @@ package {
         }
 
         private function handler_ON_DIE(event){
-        	removeEventListener(CustomEvent.ON_SHOOT, event.target.handler_ON_SHOOT);
-        	removeChild(event.target);
+            event.target.doDie(function () {
+                removeEventListener(CustomEvent.ON_SHOOT, event.target.handler_ON_SHOOT);
+                removeChild(event.target);
+        	});
         }
 
 	    public function spawn(type:String, x:Number, y:Number = groundY) {
