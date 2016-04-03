@@ -9,10 +9,10 @@ package elements {
         public var health = 100;
 
         public function FootBot(newX:Number, newY:Number, walking:Boolean = true) {
-            animation = addChild(new FootBot_walk());
             x = newX;
             y = newY;
 
+            animation = addChild(new FootBot_walk());
             animation.stop();
             if (walking){
                 walk();
@@ -24,8 +24,8 @@ package elements {
             interval = setInterval(function(){
                 x += 25;
                 var event_out = new CustomEvent(CustomEvent.ON_MOVE);
-                event_out.x = x;
-                event_out.y = y;
+                //event_out.x = x;
+                //event_out.y = y;
                 dispatchEvent(event_out);
             }, 167);
         }
@@ -33,7 +33,7 @@ package elements {
         public function beginDeath(){
             clearInterval(interval);
             animation.stop();
-            //setTimeout(explode, 1000);
+            
             explosion = addChild(new Explosion());
             removeChild(animation);
             dispatchEvent(new CustomEvent(CustomEvent.ON_DIE));
